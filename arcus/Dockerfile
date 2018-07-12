@@ -10,7 +10,7 @@ ENV ARCUS_USER        arcus
 ENV ZOOKEEPER_PATH    $ARCUS_PATH/zookeeper
 
 # add arcus user
-RUN useradd -md $ARCUS_PATH -c ARCUS -s /bin/bash $ARCUS_USER
+RUN useradd -d $ARCUS_PATH -c ARCUS -s /bin/bash $ARCUS_USER
 RUN rm -rf $ARCUS_PATH/*
 RUN echo "$ARCUS_USER:$ARCUS_USER" : chpasswd
 
