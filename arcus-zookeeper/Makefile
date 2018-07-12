@@ -7,7 +7,7 @@ build:
 rund:
 	docker run --name ${CONTAINER} --env-file=./env -d ${IMAGE}
 
-runid:
+runit:
 	docker run --name ${CONTAINER} --env-file=./env -it ${IMAGE}
 
 exec:
