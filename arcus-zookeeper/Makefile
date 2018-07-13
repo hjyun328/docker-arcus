@@ -8,7 +8,7 @@ rund:
 	docker run --name ${CONTAINER} --env-file=./env -d ${IMAGE}
 
 runit:
-	docker run --name ${CONTAINER} --env-file=./env -it ${IMAGE}
+	docker run --name ${CONTAINER} --env-file=./env -it ${IMAGE} bash
 
 exec:
 	docker exec -it ${CONTAINER} bash

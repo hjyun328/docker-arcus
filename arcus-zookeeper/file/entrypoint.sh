@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 ZOOKEEPER_CONF=$ZOOKEEPER_PATH/conf/zoo.cfg
 ZOOKEEPER_DATA=$ZOOKEEPER_PATH/data/myid
 
@@ -36,4 +34,3 @@ function create_data() {
 }
 
 create_config && create_data
-exec "$@"

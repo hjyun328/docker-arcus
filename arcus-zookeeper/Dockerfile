@@ -27,5 +27,4 @@ RUN ./build.sh
 # entrypoint & cmd
 WORKDIR $ARCUS_PATH
 COPY file/entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["$ZOOKEEPER_PATH/bin/zkServer.sh", "start-foreground"]
+CMD /entrypoint.sh && $ZOOKEEPER_PATH/bin/zkServer.sh start-foreground
