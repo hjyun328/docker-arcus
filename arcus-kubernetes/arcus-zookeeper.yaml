@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: arcus-zk
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         image: hjyun328/arcus-zookeeper:latest
         ports:
         - containerPort: 2181
