@@ -24,7 +24,7 @@ USER $ARCUS_USER
 WORKDIR $ARCUS_PATH/scripts
 RUN ./build.sh
 
-# entrypoint & cmd
+# cmd
 WORKDIR $ARCUS_PATH
-COPY file/entrypoint.sh /
-CMD /entrypoint.sh && $ZOOKEEPER_PATH/bin/zkServer.sh start-foreground
+COPY file/initialize.sh /
+CMD /initialize.sh && $ZOOKEEPER_PATH/bin/zkServer.sh start-foreground
