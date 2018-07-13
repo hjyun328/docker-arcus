@@ -24,13 +24,13 @@ function create_config() {
 
     for (( i=0; i<$ZOOKEEPER_CONF_SERVERS; i++ ))
     do
-        echo "server.$i=$HOST_NAME-$i.$HOST_NAME_DOMAIN:$ZOOKEEPER_CONF_SERVER_PORT:$ZOOKEEPER_CONF_LEADER_ELECTION_PORT" >> $ZOOKEEPER_CONF
+        echo "server.$((i+1))=$HOST_NAME-$i.$HOST_NAME_DOMAIN:$ZOOKEEPER_CONF_SERVER_PORT:$ZOOKEEPER_CONF_LEADER_ELECTION_PORT" >> $ZOOKEEPER_CONF
     done
 }
 
 function create_data() {
     mkdir -p $ZOOKEEPER_PATH/data
-    echo "$HOST_ORG" > $ZOOKEEPER_DATA
+    echo "$((HOST_ORG+1))" > $ZOOKEEPER_DATA
 }
 
 create_config && create_data
